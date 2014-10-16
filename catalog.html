@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Каталог</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+		<link rel="shortcut icon" href="images/favicon.ico">	
+  		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">  		
+    	<link rel="stylesheet" href="css/slider.css"  type="text/css" media="screen">
+    	<link rel="stylesheet" href="css/normalize.css"  type="text/css" media="screen">
+    	<link rel="stylesheet" href="css/main.css"  type="text/css" media="screen">
+		<link rel="stylesheet" href="css/catalog.css"  type="text/css" media="screen">
+		<link rel="stylesheet" href="css/jquery.fancybox.css"  type="text/css" media="screen">
+
+    	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    	<script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    	<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    	<script type="text/javascript" src="js/custom.js"></script>
+    	<script type="text/javascript" src="js/html5shiv.js"></script>
+    	<!-- include jQuery + carouFredSel plugin -->
+		<script type="text/javascript" language="javascript" src="js/modernizr.custom.04022.js"></script>
+		<script type="text/javascript" language="javascript" src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
+    	<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>		
+		<div id="container">
+			<header>
+				<div class="firstline">
+					<div class="center">
+						<a href="/" class="logo">
+							<img src="images/logo.png" alt="Логотип">
+						</a>
+						<div class="name">
+							<span>Стильная обувь</span>
+						</div>
+						<div class="fbook">
+							<i class="fa fa-facebook"></i>
+						</div>
+						<div class="for-phone">
+							<p>+375 29 658-18-67</p><!-- <img src="images/vel.png" alt=""> -->
+						</div>
+						<div class="null"></div>
+					</div> <!-- center -->
+				</div>  <!-- firstline -->
+				<div class="secondline">
+					<div class="center">
+						<nav>
+							<ul>
+								<li class="active"> <a href="index.html">главная</a> </li>
+								<li> <a href="catalog.html">каталог</a></li>
+								<li> <a href="magaziny.html">где купить</a></li>
+								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="news.html">новости</a></li>
+								<li> <a href="new-product.html">новинки</a></li>
+							</ul>
+						</nav>
+						<div class="search">
+							<form action="/search" method="POST">
+                                <input name="q" type="text" class="input-search color-text" placeholder="Поиск..." id="searchq">
+                                <input type="submit" class="submit" value="">
+                                <div class="null"></div>
+                            </form>
+						</div>
+						<div class="null"></div>
+					</div> <!-- center -->
+				</div> <!-- secondline -->
+			</header>
+			<div class="content">
+				<div class="center">
+					<section class="additionalBlocks center before-catalog">
+						<a href="akcii.html" class="oneColorBlock firstblock">
+							<img src="images/akcia.jpg" alt="">
+							<div class="forlink forlink_1">
+	                        	<span class="label_1">Акции<i class="ish"></i></span>
+	                    	</div>
+						</a>
+						<a href="akcii.html" class="oneColorBlock secondblock">
+							<img src="images/ucenka.jpg" alt="">
+							<div class="forlink forlink_2">
+								<span class="label_2">Уценка<i class="ish"></i></span>
+							</div>
+						</a>
+						<a href="akcii.html" class="oneColorBlock thirdblock">
+							<img src="images/rasprodazha.jpg" alt="">
+							<div class="forlink forlink_3">
+								<span class="label_3">Распродажа<i class="ish"></i></span>
+							</div>
+						</a>
+						<div class="null"></div>
+					</section> <!-- additionalBlocks -->
+					<!-- фильтр -->
+					<aside class="filtr">
+					<div class="filterFastResult" style="display: block;">
+						<div class="inny">
+							<p class="filterFastResultIn">
+							Выбрано товаров <span id="founded">190</span> из <span>190</span>
+							</p>
+							<i class="fa fa-angle-double-right " id="show_result"></i>
+						</div>
+					</div>
+					<div class="oneFiltr">
+						<div class="topFiltr">
+							<p>Цена</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+						</div>
+						<div class="bottomFiltr">
+							<div id="slider"></div>
+						    <script>
+							  /* $("#slider").editRangeSlider({
+								   	arrows:false,
+								   	defaultValues:{min: 500 000, max: 3500 000},
+    								bounds:{min:200 000 , max: 10000000},
+    								valueLabels:"change",
+										delayOut: 4000,
+										step: 200 000,
+								});*/
+							</script>
+						  	<div class="checkboxes">
+								<div class="check">
+									Распродажа
+									<input type="checkbox" value="Распродажа" />
+								</div>
+							</div>
+						</div>
+					</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Тип</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="checkboxes">
+									<div class="check">
+										Сапоги
+										<input type="checkbox" value="Сапоги" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Полусапоги
+										<input type="checkbox" value="Полусапоги" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Ботильоны
+										<input type="checkbox" value="Ботильоны" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Ботинки
+										<input type="checkbox" value="Ботинки" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Туфли
+										<input type="checkbox" value="Туфли" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Балетки
+										<input type="checkbox" value="Балетки" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Босоножки
+										<input type="checkbox" value="Босоножки" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Сандали
+										<input type="checkbox" value="Сандали" />
+										<span>(232)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Сезон</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="checkboxes">
+									<div class="check">
+										Демисезон
+										<input type="checkbox" value="Демисезон" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Зима
+										<input type="checkbox" value="Зима" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Лето
+										<input type="checkbox" value="Лето" />
+										<span>(232)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Каблук</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="checkboxes">
+									<div class="check">
+										Без каблука
+										<input type="checkbox" value="Без каблука" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Низкий
+										<input type="checkbox" value="Низкий" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Средний
+										<input type="checkbox" value="Средний" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Высокий
+										<input type="checkbox" value="Высокий" />
+										<span>(232)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Размер</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<ul class="checklist sizes">
+									<li><a href="#" rel="size" data-item="33" class="checkbox ">33</a></li>
+									<li><a href="#" rel="size" data-item="34" class="checkbox ">34</a></li>
+									<li><a href="#" rel="size" data-item="35" class="checkbox ">35</a></li>
+									<li><a href="#" rel="size" data-item="36" class="checkbox ">36</a></li>
+									<li><a href="#" rel="size" data-item="37" class="checkbox ">37</a></li>
+									<li><a href="#" rel="size" data-item="38" class="checkbox ">38</a></li>
+									<li><a href="#" rel="size" data-item="39" class="checkbox ">39</a></li>
+									<li><a href="#" rel="size" data-item="40" class="checkbox ">40</a></li>
+									<li><a href="#" rel="size" data-item="41" class="checkbox ">41</a></li>
+									<li><a href="#" rel="size" data-item="42" class="checkbox ">42</a></li>
+									<li><a href="#" rel="size" data-item="43" class="checkbox ">43</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Цвет</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="scroll-wrap">
+									<div class="scroll-pane"> 
+										<div class="checkboxes">
+											<div class="check">
+												Черный
+												<input type="checkbox" value="Черный" />
+												<span>(232)</span>
+												<div class="color color1"></div>
+											</div>
+											<div class="check">
+												Бежевый
+												<input type="checkbox" value="Бежевый" />
+												<span>(232)</span>
+												<div class="color color2"></div>
+											</div>
+											<div class="check">
+												Коричневый
+												<input type="checkbox" value="Коричневый" />
+												<span>(232)</span>
+												<div class="color color3"></div>
+											</div>
+											<div class="check">
+												Синий
+												<input type="checkbox" value="Синий" />
+												<span>(232)</span>
+												<div class="color color4"></div>
+											</div>
+											<div class="check">
+												Белый
+												<input type="checkbox" value="Белый" />
+												<span>(232)</span>
+												<div class="color color5"></div>
+											</div>
+											<div class="check">
+												Красный
+												<input type="checkbox" value="Красный" />
+												<span>(232)</span>
+												<div class="color color6"></div>
+											</div>
+											<div class="check">
+												Серый
+												<input type="checkbox" value="Серый" />
+												<span>(232)</span>
+												<div class="color color7"></div>
+											</div>
+											<div class="check">
+												Желтый
+												<input type="checkbox" value="Желтый" />
+												<span>(232)</span>
+												<div class="color color8"></div>
+											</div>
+											<div class="null"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Бренды</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="checkboxes">
+									<div class="check">
+										Basconi
+										<input type="checkbox" value="Basconi" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Bonetti
+										<input type="checkbox" value="Bonetti" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										BROCOLY
+										<input type="checkbox" value="BROCOLY" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Loffira
+										<input type="checkbox" value="Loffira" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Medea
+										<input type="checkbox" value="Medea" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										ONDA VERDE
+										<input type="checkbox" value="ONDA VERDE" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Villador
+										<input type="checkbox" value="Villador" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Wit Mooni
+										<input type="checkbox" value="Wit Mooni" />
+										<span>(232)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Тип голени</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="checkboxes">
+									<div class="check">
+										Широкая
+										<input type="checkbox" value="Широкая" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Узкая
+										<input type="checkbox" value="Узкая" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Стандарт
+										<input type="checkbox" value="Стандарт" />
+										<span>(232)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Материал</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="checkboxes">
+									<div class="check">
+										Кожа
+										<input type="checkbox" value="Кожа" />
+										<span>(232)</span>
+									</div>
+									<div class="check">
+										Замша
+										<input type="checkbox" value="Замша" />
+										<span>(232)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pickUp">
+							Сбросить настройки
+						</div>
+					</aside>	<!-- фильтр --> 
+					<section class="diff-content">
+						<!-- хлебные крошки -->
+						<ul class="breadcrumb breadcrumb-custom">  
+							<div xmlns:v="http://rdf.data-vocabulary.org/#">
+							    <span typeof="v:Breadcrumb">
+							    	<a href="http://daflor.by/" rel="v:url" property="v:title">Цветы в Минске</a>&raquo; 
+							    	<span rel="v:child"> 
+						            	<span typeof="v:Breadcrumb"> 
+						                	<a href="/catalog/розы" rel="v:url" property="v:title">Роза</a>&raquo;
+					            			<span rel="v:child"> 
+					                			<span typeof="v:Breadcrumb"> 
+					                    			<a href="/catalog/красные" rel="v:url" property="v:title">Красные</a>&raquo;
+				                					<span rel="v:child"> 
+				                    					<span typeof="v:Breadcrumb">Red Naomi</span> 
+				                					</span> 
+												</span>
+											</span>
+										</span>
+									</span>
+								</span>
+							</div> 
+						</ul>   <!-- хлебные крошки конец -->
+						<!-- верхняя пагинация -->
+						<ul class="pagination">
+							<li class="active"><a href="/">1</a></li>
+							<li><a href="/">2</a></li>
+							<li><a href="/">3</a></li>
+							<li><a href="/">4</a></li>
+						   	<li><a href="/">»</a></li>
+						</ul>	<!-- верхняя пагинация конец -->
+						<div class="null"></div>
+						<!-- каталог -->
+						<div class="cataloque">
+							<!--начало одного товара в каталоге -->
+								<figure>
+                        			<a href="#product_1" class="product gallery" rel="group">
+                        				<div class="novinka">
+		                            		<p>новинка</p>
+		                            	</div>													                        	
+										<div class="for-image">	
+											<img src="images/4botik.jpg" alt="">	
+										</div>                                      
+										<figcaption>
+											<h4>Сапоги Wit Mooni <span>222-1</span></h4>
+											<p class="price">2 000 000 р.</p>
+										</figcaption>
+                        			</a>         
+			                        <!--в fancybox-->         
+			                        <div id="product_1" class="for-box">
+										<div class="forimage">
+											<img src="images/tuflibig.jpg" alt="">
+										</div>
+										<div class="forinfo">
+											<h1>Сапоги Wit Mooni 222-1</h1>
+											<div class="dif">
+												<div class="articul">235</div>
+												<div class="forcost">2 000 <sup>000</sup> <span>р.</span></div>
+												<div class="null"></div>	
+											</div>
+											<div class="forTable">
+										        <table>
+									             	<tr>
+										            	<td>новый</td>
+							                        	<td>да</td>
+						                    		</tr>
+						                    		<tr>
+										            	<td>сезон</td>
+							                        	<td>осень</td>
+						                    		</tr>
+						                    		<tr>
+										            	<td>каблук</td>
+							                        	<td>Низкий</td>
+						                    		</tr>
+						                    		<tr>
+										            	<td>цвет</td>
+							                        	<td>Коричневый</td>
+						                    		</tr>
+						                    		<tr>
+										            	<td>бренд</td>
+							                        	<td>Wit Mooni</td>
+						                    		</tr>
+						                    		<tr>
+										            	<td>тип голени</td>
+							                        	<td>стандарт</td>
+						                    		</tr>
+						                    		<tr>
+										            	<td>материал</td>
+							                        	<td>кожа</td>
+						                    		</tr>
+												</table>
+											</div> <!-- forTable -->
+											<div class="sizy">
+												<ul class="checklist sizes">
+																				            	 							                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							                   
+								                    <li><a href="#" rel="size" data-item="33" class="checkbox">33</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="34" class="checkbox">34</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="35" class="checkbox isset">35</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="36" class="checkbox isset">36</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="37" class="checkbox isset">37</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="38" class="checkbox isset">38</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="39" class="checkbox isset">39</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="40" class="checkbox isset">40</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="41" class="checkbox">41</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="42" class="checkbox">42</a></li>
+								            								            								                    							                   
+								                    <li><a href="#" rel="size" data-item="43" class="checkbox">43</a></li>
+								                </ul>
+										    </div> <!-- sizy -->
+										</div>  <!-- forinfo -->
+										<div class="null"></div>
+									</div>  <!-- for-box --> 
+								</figure> <!--конец одного товара в каталоге -->				
+								<!--начало второго товара в каталоге -->
+								<figure>
+                        			<a href="#product_1" class="product gallery" rel="group">
+                        				<div class="novinka">
+		                            		<p>новинка</p>
+		                            	</div>													                        	
+										<div class="for-image">	
+											<img src="images/2tufli.jpg" alt="">	
+										</div>                                      
+										<figcaption>
+											<h4>Сапоги Wit Mooni <span>222-1</span></h4>
+											<p class="price">2 000 000 р.</p>
+										</figcaption>
+                        			</a>                    
+								</figure> <!--конец второго товара в каталоге -->		
+								<figure>
+                        			<a href="#product_1" class="product gallery" rel="group">
+                        				<div class="novinka">
+		                            		<p>новинка</p>
+		                            	</div>													                        	
+										<div class="for-image">	
+											<img src="images/3botik.jpg" alt="">	
+										</div>                                      
+										<figcaption>
+											<h4>Сапоги Wit Mooni <span>222-1</span></h4>
+											<p class="price">2 000 000 р.</p>
+										</figcaption>
+                        			</a>                    
+								</figure> <!--конец второго товара в каталоге -->		
+								<figure>
+                        			<a href="#product_1" class="product gallery" rel="group">
+                        				<div class="novinka">
+		                            		<p>новинка</p>
+		                            	</div>													                        	
+										<div class="for-image">	
+											<img src="images/sapog.jpg" alt="">	
+										</div>                                      
+										<figcaption>
+											<h4>Сапоги Wit Mooni <span>222-1</span></h4>
+											<p class="price">2 000 000 р.</p>
+										</figcaption>
+                        			</a>                    
+								</figure> <!--конец второго товара в каталоге -->		
+								<div class="null"></div>
+						</div>  <!-- каталог -->
+						<!-- нижняя пагинация -->
+						<ul class="pagination">
+							<li class="active"><a href="/">1</a></li>
+							<li><a href="/">2</a></li>
+							<li><a href="/">3</a></li>
+							<li><a href="/">4</a></li>
+						   	<li><a href="/">»</a></li>
+						</ul>  <!-- нижняя пагинация конец -->
+					</section>  <!-- diff-content -->
+					<div class="null"></div>
+				</div> <!-- center -->
+			</div> <!-- content -->
+				<section class="beforeFooter">
+					<div class="center">
+						<div class="mainzag">
+							<h2>бренды</h2>
+						</div>	<!-- mainzag -->
+						<!-- carousel -->
+						<div class="list_carousel">
+							<ul id="foo2">
+								<li><div class="oneBrend">
+										<img src="images/brend_01.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_02.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_03.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_04.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_05.jpg" alt="brend">
+									</div>
+								</li>
+
+								<li><div class="oneBrend">
+										<img src="images/brend_06.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_07.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_08.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_09.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_10.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_11.jpg" alt="brend">
+									</div>
+								</li>
+								<li class="null"></li>
+							</ul>
+							<div class="clearfix"></div>
+							<a id="prev2" class="prev" href="#">&lt;</a>
+							<a id="next2" class="next" href="#">&gt;</a>
+						</div> <!--list_carousel-->
+					</div>  <!-- center -->
+				</section>  <!--  beforeFooter -->
+			
+			<div class="helper"></div>
+			<footer>
+				<div class="center">
+					<div class="left-footer">
+						<div class="fLine"></div>
+						<nav class="firstNav">
+							<ul>
+								<li> <a class="active" href="index.html">главная</a> </li>
+								<li> <a href="catalog.html">каталог</a></li>
+								<li> <a href="magaziny.html">где купить</a></li>
+								<li> <a href="/about.html">о нас</a></li>
+								<li> <a href="/news.html">новости</a></li>
+								<li> <a href="/new-product.html">новинки</a></li>
+							</ul>
+						</nav>
+						<div class="addmenu">
+							<ul>
+								<li> <a href="bonus.html">бонусная система</a> </li>
+								<li> <a href="garantee.html">гарантия</a></li>
+								<li> <a href="vozvrat.html">возврат товара</a></li>
+								<li> <a href="about.html">о компании</a></li>
+								<li> <a href="brend.html">бренды</a></li>
+							</ul>
+						</div>
+					</div> <!--  left-footer -->
+					<div class="footer-fbook">
+						<i class="fa fa-facebook"></i>
+					</div>
+					<div class="forPhones">
+						<p>+375 (29) 658-18-67</p>
+					</div>
+					<div class="null"></div>	
+				</div> <!-- center -->
+			</footer>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,100 @@
+.forfoto {
+  width: 300px;
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+.forfoto img {
+max-width: 100%;
+}
+.news-content {
+  float: left;
+  width: 635px;
+}
+.forallnews {
+border-bottom: 1px solid #DBDBDB;
+padding-bottom: 10px;
+}
+.head-one-new {
+position: relative;
+margin-bottom: 10px;
+}
+.head-one-new time {
+position: absolute;
+top: 5px;
+right: 0;
+}
+time {
+color: #8A8A8A;
+font-size: 15px;
+display: block;
+margin-bottom: 2px;
+}
+.head-one-new h1 {
+  padding-right: 90px;
+line-height: 30px;
+font-weight: lighter;
+font-size: 35px;
+}
+.forallnews p {
+margin-bottom: 0px;
+font-size: 17px;
+color: #1D1D1D;
+}
+.news-content .fa {
+padding-left: 3px;
+}
+.forOneNews a {
+text-decoration: underline;
+color: #DF4239;
+padding-top: 5px;
+display: inline-block;
+}
+.one-new {
+  border-bottom: 1px solid #e3e3e3;
+  padding-bottom: 5px;
+}
+.aboutOneNews img {
+margin-bottom: 20px;
+}
+
+.aboutOneNews {
+  padding-top: 40px;
+}
+.aboutOneNews p {
+  margin-bottom: 20px;
+  font-size: 18px;
+color: #020202;
+}
+.basic {
+background: #f8f8f8;
+border: 1px solid #efefef;
+padding: 30px 30px 40px;
+font-size: 20px!important;
+}
+.aboutOneNews time {
+color: #767676;
+font-size: 16px;
+display: block;
+margin-bottom: 2px;
+}
+.for-akcia {
+  text-align: center;
+}
+/*brendy*/
+.pageBrend li {
+  text-align: center;
+height: 73px;
+margin-bottom: 10px;
+display: inline-block;
+}
+.brendy p{
+ margin-bottom: 25px;
+}
+.brendy p strong {
+font-style: italic;
+font-size: 20px;
+}
+.brendy {
+padding-top: 20px;
+}

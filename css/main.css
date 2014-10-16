@@ -133,9 +133,9 @@ a:hover {
   transition: color 500ms ease;
 }
 p {
-  margin-bottom: 0px;
-  font-size: 16px;
-  color: #6b6e80;
+margin-bottom: 0px;
+font-size: 17px;
+color: #2D2D2D;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -186,13 +186,15 @@ header {
 footer {
   width: 100%;
   position: absolute;
-  height: 170px;
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   bottom: 0;
   left: 0px;
   background: #383838;
 }
 .helper {
-  height: 170px;
+  height: 140px;
 }
 .center {
   width: 960px;
@@ -448,8 +450,81 @@ top: 0;
 .fLine {
 background: #1a1a1a;
 position: absolute;
-top: 30px;
+top: 20px;
 left: 0px;
-width: 50%;
+width: 51%;
 height: 40px;
+}
+.forPhones {
+  float: right;
+  margin-top: 17px;
+}
+.forPhones p {
+  color: #eee;
+  font-size: 19px;
+  background: url(../images/vel.png) no-repeat 100% 60%;
+  padding-right: 20px;
+}
+.left-footer {
+  float: left;
+}
+  .footer-fbook {
+    float: right;
+    background-color: #eee;
+    border-radius: 5px;
+    margin-left: 90px;
+    margin-top: 17px;
+  }
+  .footer-fbook .fa{
+color: #383838;
+padding: 8px 6px 0px 6px;
+margin-bottom: -3px;
+display: block;
+  }
+    .firstNav {
+    position: absolute;
+    top:20px;
+    z-index: 1;
+  }
+    .firstNav li {
+    display: inline;
+  }
+  .firstNav a {
+    text-transform: uppercase;
+    color: #eee;
+    font-size: 15px;
+    padding: 10px 10px;
+    display: inline-block;
+  }
+   .firstNav a:hover {
+    color: #e93131; 
+  }
+   .firstNav .active {
+    color: #e93131; 
+  }
+    footer .addmenu  {
+padding-top: 60px;
+}
+  footer .addmenu ul {
+border-right: 1px solid #000;
+box-shadow: 1px 0px 0px #7A7575;
+}
+footer .addmenu ul li:first-child {
+border-left: none;
+box-shadow: -1px 0px 0px transparent;
+}
+footer .addmenu ul li {
+display: inline-block;
+border-left: 1px solid #7A7575;
+box-shadow: -1px 0px 0px #000;
+}
+footer .addmenu ul li a:hover {
+text-decoration: none;
+}
+footer .addmenu ul li a {
+text-transform: uppercase;
+color: #898989;
+font-size: 13px;
+text-decoration: underline;
+padding: 10px 8px 11px;
 }

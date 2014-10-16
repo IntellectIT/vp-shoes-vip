@@ -11,6 +11,18 @@ $(document).ready(function() {
             onTouch: true
         }
     });
+    // фильтр
+     $('.topFiltr').click(function(){
+        var topFiltr = $(this).offset().top - $('#ajax_filter').offset().top;
+        $('.filterFastResult').css('top', topFiltr);
+    }) 
+
+
+    $('.secondline .submit').click(function(){
+        $('.secondline .input-search').show();
+    }) 
+    //вызов fancybox
+    $('.product').fancybox();
           
 
 		
