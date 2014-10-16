@@ -10,12 +10,14 @@
   		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">  		
     	<link rel="stylesheet" href="css/slider.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/normalize.css"  type="text/css" media="screen">
+    	<link rel="stylesheet" href="css/jquery.fancybox.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/main.css"  type="text/css" media="screen">
 		<link rel="stylesheet" href="css/catalog.css"  type="text/css" media="screen">
-		<link rel="stylesheet" href="css/jquery.fancybox.css"  type="text/css" media="screen">
+		
 
     	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     	<script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
     	<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
     	<script type="text/javascript" src="js/custom.js"></script>
     	<script type="text/javascript" src="js/html5shiv.js"></script>
@@ -31,7 +33,7 @@
 			<header>
 				<div class="firstline">
 					<div class="center">
-						<a href="/" class="logo">
+						<a href="index.html" class="logo">
 							<img src="images/logo.png" alt="Логотип">
 						</a>
 						<div class="name">
@@ -49,13 +51,21 @@
 				<div class="secondline">
 					<div class="center">
 						<nav>
-							<ul>
-								<li class="active"> <a href="index.html">главная</a> </li>
+							<ul class="top-ul">
+								<li> <a class="active" href="index.html">главная</a> </li>
 								<li> <a href="catalog.html">каталог</a></li>
 								<li> <a href="magaziny.html">где купить</a></li>
-								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="about.html">о нас</a>
+									<ul>
+								      <li><a href="about.html">Бонусная система</a></li>
+								      <li><a href="about.html">Гарантия</a></li>
+								      <li><a href="about.html">Возврат товара</a></li>
+								      <li><a href="about.html">О компании</a></li>
+								      <li><a href="brendy.html">Бренды</a></li>
+								    </ul>
+								</li>
 								<li> <a href="news.html">новости</a></li>
-								<li> <a href="new-product.html">новинки</a></li>
+								<li> <a href="catalog.html">новинки</a></li>
 							</ul>
 						</nav>
 						<div class="search">
@@ -94,38 +104,41 @@
 					</section> <!-- additionalBlocks -->
 					<!-- фильтр -->
 					<aside class="filtr">
-					<div class="filterFastResult" style="display: block;">
-						<div class="inny">
-							<p class="filterFastResultIn">
-							Выбрано товаров <span id="founded">190</span> из <span>190</span>
-							</p>
-							<i class="fa fa-angle-double-right " id="show_result"></i>
+						<div class="filterFastResult" style="display: block;">
+							<div class="inny">
+								<p class="filterFastResultIn">
+								Выбрано товаров <span id="founded">190</span> из <span>190</span>
+								</p>
+								<i class="fa fa-angle-double-right " id="show_result"></i>
+							</div>
 						</div>
-					</div>
-					<div class="oneFiltr">
-						<div class="topFiltr">
-							<p>Цена</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
-						</div>
-						<div class="bottomFiltr">
-							<div id="slider"></div>
-						    <script>
-							  /* $("#slider").editRangeSlider({
-								   	arrows:false,
-								   	defaultValues:{min: 500 000, max: 3500 000},
-    								bounds:{min:200 000 , max: 10000000},
-    								valueLabels:"change",
-										delayOut: 4000,
-										step: 200 000,
-								});*/
-							</script>
-						  	<div class="checkboxes">
-								<div class="check">
-									Распродажа
-									<input type="checkbox" value="Распродажа" />
+						<div class="oneFiltr">
+							<div class="topFiltr">
+								<p>Цена</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
+							</div>
+							<div class="bottomFiltr">
+								<div class="polz" method="post">		
+									<div class="sliderCont">
+										<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 0%; width: 100%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 0%;"></span><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span></div>
+									</div>
+									<div class="formCost">
+										<label for="minCost"></label>
+										<input type="text" id="minCost" name="cost_min" value="0">
+										<!-- <span class="float:left;">-</span> -->
+										<label for="maxCost"></label> 
+										<input type="text" id="maxCost" name="cost_max" value="2400000">
+										<div class="null"></div>
+									</div>
+								</div>	
+								<div class="null"></div>
+							  	<div class="checkboxes">
+									<div class="check">
+										<input type="checkbox" value="Распродажа" id="rasprodaza" name="rasprodaza">
+										<label for="rasprodaza">Распродажа</label>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Тип</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
@@ -133,47 +146,48 @@
 							<div class="bottomFiltr">
 								<div class="checkboxes">
 									<div class="check">
-										Сапоги
-										<input type="checkbox" value="Сапоги" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Полусапоги
-										<input type="checkbox" value="Полусапоги" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Ботильоны
-										<input type="checkbox" value="Ботильоны" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Ботинки
-										<input type="checkbox" value="Ботинки" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Туфли
-										<input type="checkbox" value="Туфли" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Балетки
-										<input type="checkbox" value="Балетки" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Босоножки
-										<input type="checkbox" value="Босоножки" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Сандали
-										<input type="checkbox" value="Сандали" />
-										<span>(232)</span>
-									</div>
+									<input type="checkbox" data-translit="capogi" value="407" name="cats[]" id="cat_id_407">
+									<label for="cat_id_407">Cапоги</label>
+									<span>(232)</span>
 								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="polusapogi" value="409" name="cats[]" id="cat_id_409">
+									<label for="cat_id_409">Полусапоги</label>
+									<span>(232)</span>
+								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="botilony" value="410" name="cats[]" id="cat_id_410">
+									<label for="cat_id_410">Ботильоны</label>
+									<span>(232)</span>
+								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="botinki" value="411" name="cats[]" id="cat_id_411">
+									<label for="cat_id_411">Ботинки</label>
+									<span>(232)</span>
+								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="tufli" value="412" name="cats[]" id="cat_id_412">
+									<label for="cat_id_412">Туфли</label>
+									<span>(232)</span>
+								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="baletki" value="413" name="cats[]" id="cat_id_413">
+									<label for="cat_id_413">Балетки</label>
+									<span>(232)</span>
+								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="bosonozhki" value="414" name="cats[]" id="cat_id_414">
+									<label for="cat_id_414">Босоножки</label>
+									<span>(232)</span>
+								</div>
+																	<div class="check">
+									<input type="checkbox" data-translit="sandalii" value="415" name="cats[]" id="cat_id_415">
+									<label for="cat_id_415">Сандалии</label>
+									<span>(232)</span>
+								</div>
+																
 							</div>
+						</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
@@ -182,225 +196,363 @@
 							<div class="bottomFiltr">
 								<div class="checkboxes">
 									<div class="check">
-										Демисезон
-										<input type="checkbox" value="Демисезон" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Зима
-										<input type="checkbox" value="Зима" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Лето
-										<input type="checkbox" value="Лето" />
-										<span>(232)</span>
-									</div>
-								</div>
+		                                <input id="сезон осень" type="checkbox" name="checkbox_charname_14[]" value="осень">
+		                            	<label for="сезон осень">осень</label>
+		                            	<span>(count)</span>
+		                           </div>
+		                       		<div class="check">	
+		                                <input id="сезон зима" type="checkbox" name="checkbox_charname_14[]" value="зима">
+		                            	<label for="сезон зима">зима</label>
+		                            	<span>(count)</span>
+		                           </div>
+		                       		<div class="check">
+		                                <input id="сезон демисезон" type="checkbox" name="checkbox_charname_14[]" value="демисезон">
+		                            	<label for="сезон демисезон">демисезон</label>
+		                            	<span>(count)</span>
+		                           </div>
+		                       	</div>
 							</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Каблук</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
 							</div>
-							<div class="bottomFiltr">
-								<div class="checkboxes">
-									<div class="check">
-										Без каблука
-										<input type="checkbox" value="Без каблука" />
-										<span>(232)</span>
+							<div class="bottomFiltr" style="overflow: hidden; display: block;">
+										<div class="checkboxes">
+																                           <div class="check">
+					                           		
+					                                <input id="каблук низкий" type="checkbox" name="checkbox_charname_15[]" value="низкий">
+					                            	<label for="каблук низкий">низкий</label>
+					                            	<span>(count)</span>
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="каблук высокий" type="checkbox" name="checkbox_charname_15[]" value="высокий">
+					                            	<label for="каблук высокий">высокий</label>
+					                            	<span>(count)</span>
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="каблук средний" type="checkbox" name="checkbox_charname_15[]" value="средний">
+					                            	<label for="каблук средний">средний</label>
+					                            	<span>(count)</span>
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="каблук танкетка" type="checkbox" name="checkbox_charname_15[]" value="танкетка">
+					                            	<label for="каблук танкетка">танкетка</label>
+					                            	<span>(count)</span>
+					                           </div>
+					                       										</div>
 									</div>
-									<div class="check">
-										Низкий
-										<input type="checkbox" value="Низкий" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Средний
-										<input type="checkbox" value="Средний" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Высокий
-										<input type="checkbox" value="Высокий" />
-										<span>(232)</span>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Размер</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
 							</div>
-							<div class="bottomFiltr">
+							<div class="bottomFiltr" style="overflow: hidden; display: block;">
+							<div class="checkboxes">
 								<ul class="checklist sizes">
-									<li><a href="#" rel="size" data-item="33" class="checkbox ">33</a></li>
-									<li><a href="#" rel="size" data-item="34" class="checkbox ">34</a></li>
-									<li><a href="#" rel="size" data-item="35" class="checkbox ">35</a></li>
-									<li><a href="#" rel="size" data-item="36" class="checkbox ">36</a></li>
-									<li><a href="#" rel="size" data-item="37" class="checkbox ">37</a></li>
-									<li><a href="#" rel="size" data-item="38" class="checkbox ">38</a></li>
-									<li><a href="#" rel="size" data-item="39" class="checkbox ">39</a></li>
-									<li><a href="#" rel="size" data-item="40" class="checkbox ">40</a></li>
-									<li><a href="#" rel="size" data-item="41" class="checkbox ">41</a></li>
-									<li><a href="#" rel="size" data-item="42" class="checkbox ">42</a></li>
-									<li><a href="#" rel="size" data-item="43" class="checkbox ">43</a></li>
-								</ul>
+									<input type="hidden" id="sizeforsearch" name="size" value="">
+								            						         						            						         						            						         						            						         						            						         						            						         						            						         						            						         						            						         						            						         						            																<li>
+											<a href="#" rel="size" data-item="33" class="checkbox ">33</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="34" class="checkbox">34</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="35" class="checkbox choosen">35</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="36" class="checkbox choosen">36</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="37" class="checkbox ">37</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="38" class="checkbox ">38</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="39" class="checkbox ">39</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="40" class="checkbox ">40</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="41" class="checkbox ">41</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="42" class="checkbox ">42</a>
+
+										</li>
+		                        	         						            																<li>
+											<a href="#" rel="size" data-item="43" class="checkbox ">43</a>
+
+										</li>
+		                        	         								                       </ul>
 							</div>
+						</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Цвет</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
 							</div>
-							<div class="bottomFiltr">
-								<div class="scroll-wrap">
-									<div class="scroll-pane"> 
+<div class="bottomFiltr" style="overflow: hidden; display: block;">
 										<div class="checkboxes">
-											<div class="check">
-												Черный
-												<input type="checkbox" value="Черный" />
-												<span>(232)</span>
-												<div class="color color1"></div>
-											</div>
-											<div class="check">
-												Бежевый
-												<input type="checkbox" value="Бежевый" />
-												<span>(232)</span>
-												<div class="color color2"></div>
-											</div>
-											<div class="check">
-												Коричневый
-												<input type="checkbox" value="Коричневый" />
-												<span>(232)</span>
-												<div class="color color3"></div>
-											</div>
-											<div class="check">
-												Синий
-												<input type="checkbox" value="Синий" />
-												<span>(232)</span>
-												<div class="color color4"></div>
-											</div>
-											<div class="check">
-												Белый
-												<input type="checkbox" value="Белый" />
-												<span>(232)</span>
-												<div class="color color5"></div>
-											</div>
-											<div class="check">
-												Красный
-												<input type="checkbox" value="Красный" />
-												<span>(232)</span>
-												<div class="color color6"></div>
-											</div>
-											<div class="check">
-												Серый
-												<input type="checkbox" value="Серый" />
-												<span>(232)</span>
-												<div class="color color7"></div>
-											</div>
-											<div class="check">
-												Желтый
-												<input type="checkbox" value="Желтый" />
-												<span>(232)</span>
-												<div class="color color8"></div>
-											</div>
-											<div class="null"></div>
-										</div>
+																                           <div class="check">
+					                           		
+					                                <input id="цвет черный" type="checkbox" name="checkbox_charname_16[]" value="черный">
+					                            	<label for="цвет черный">черный</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет коричневый" type="checkbox" name="checkbox_charname_16[]" value="коричневый">
+					                            	<label for="цвет коричневый">коричневый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет бежевый" type="checkbox" name="checkbox_charname_16[]" value="бежевый">
+					                            	<label for="цвет бежевый">бежевый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет розовый" type="checkbox" name="checkbox_charname_16[]" value="розовый">
+					                            	<label for="цвет розовый">розовый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет серый" type="checkbox" name="checkbox_charname_16[]" value="серый">
+					                            	<label for="цвет серый">серый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет синий" type="checkbox" name="checkbox_charname_16[]" value="синий">
+					                            	<label for="цвет синий">синий</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет белый" type="checkbox" name="checkbox_charname_16[]" value="белый">
+					                            	<label for="цвет белый">белый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет красный" type="checkbox" name="checkbox_charname_16[]" value="красный">
+					                            	<label for="цвет красный">красный</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет желтый" type="checkbox" name="checkbox_charname_16[]" value="желтый">
+					                            	<label for="цвет желтый">желтый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет бордовый" type="checkbox" name="checkbox_charname_16[]" value="бордовый">
+					                            	<label for="цвет бордовый">бордовый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет графит" type="checkbox" name="checkbox_charname_16[]" value="графит">
+					                            	<label for="цвет графит">графит</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет черный (хамелеон)" type="checkbox" name="checkbox_charname_16[]" value="черный (хамелеон)">
+					                            	<label for="цвет черный (хамелеон)">черный (хамелеон)</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет песочный" type="checkbox" name="checkbox_charname_16[]" value="песочный">
+					                            	<label for="цвет песочный">песочный</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет зеленый" type="checkbox" name="checkbox_charname_16[]" value="зеленый">
+					                            	<label for="цвет зеленый">зеленый</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="цвет золото" type="checkbox" name="checkbox_charname_16[]" value="золото">
+					                            	<label for="цвет золото">золото</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       										</div>
 									</div>
-								</div>
-							</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Бренды</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
 							</div>
-							<div class="bottomFiltr">
-								<div class="checkboxes">
-									<div class="check">
-										Basconi
-										<input type="checkbox" value="Basconi" />
-										<span>(232)</span>
+							<div class="bottomFiltr" style="overflow: hidden; display: block;">
+										<div class="checkboxes">
+																                           <div class="check">
+					                           		
+					                                <input id="бренд basconi" type="checkbox" name="checkbox_charname_17[]" value="basconi">
+					                            	<label for="бренд basconi">basconi</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд medea" type="checkbox" name="checkbox_charname_17[]" value="medea">
+					                            	<label for="бренд medea">medea</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд bonetti" type="checkbox" name="checkbox_charname_17[]" value="bonetti">
+					                            	<label for="бренд bonetti">bonetti</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд stoalos" type="checkbox" name="checkbox_charname_17[]" value="stoalos">
+					                            	<label for="бренд stoalos">stoalos</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд villador" type="checkbox" name="checkbox_charname_17[]" value="villador">
+					                            	<label for="бренд villador">villador</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд voffira" type="checkbox" name="checkbox_charname_17[]" value="voffira">
+					                            	<label for="бренд voffira">voffira</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд p.p.3" type="checkbox" name="checkbox_charname_17[]" value="p.p.3">
+					                            	<label for="бренд p.p.3">p.p.3</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд m.m.8" type="checkbox" name="checkbox_charname_17[]" value="m.m.8">
+					                            	<label for="бренд m.m.8">m.m.8</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд onda verde" type="checkbox" name="checkbox_charname_17[]" value="onda verde">
+					                            	<label for="бренд onda verde">onda verde</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд mariblu" type="checkbox" name="checkbox_charname_17[]" value="mariblu">
+					                            	<label for="бренд mariblu">mariblu</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд geronea" type="checkbox" name="checkbox_charname_17[]" value="geronea">
+					                            	<label for="бренд geronea">geronea</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд carlabei" type="checkbox" name="checkbox_charname_17[]" value="carlabei">
+					                            	<label for="бренд carlabei">carlabei</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд brocoli" type="checkbox" name="checkbox_charname_17[]" value="brocoli">
+					                            	<label for="бренд brocoli">brocoli</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд mario moro" type="checkbox" name="checkbox_charname_17[]" value="mario moro">
+					                            	<label for="бренд mario moro">mario moro</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд wit mooni" type="checkbox" name="checkbox_charname_17[]" value="wit mooni">
+					                            	<label for="бренд wit mooni">wit mooni</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="бренд sasha fabiani" type="checkbox" name="checkbox_charname_17[]" value="sasha fabiani">
+					                            	<label for="бренд sasha fabiani">sasha fabiani</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       										</div>
 									</div>
-									<div class="check">
-										Bonetti
-										<input type="checkbox" value="Bonetti" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										BROCOLY
-										<input type="checkbox" value="BROCOLY" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Loffira
-										<input type="checkbox" value="Loffira" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Medea
-										<input type="checkbox" value="Medea" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										ONDA VERDE
-										<input type="checkbox" value="ONDA VERDE" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Villador
-										<input type="checkbox" value="Villador" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Wit Mooni
-										<input type="checkbox" value="Wit Mooni" />
-										<span>(232)</span>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Тип голени</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
 							</div>
-							<div class="bottomFiltr">
-								<div class="checkboxes">
-									<div class="check">
-										Широкая
-										<input type="checkbox" value="Широкая" />
-										<span>(232)</span>
+							<div class="bottomFiltr" style="overflow: hidden; display: block;">
+										<div class="checkboxes">
+																                           <div class="check">
+					                           		
+					                                <input id="тип голени стандарт" type="checkbox" name="checkbox_charname_18[]" value="стандарт">
+					                            	<label for="тип голени стандарт">стандарт</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="тип голени широкая" type="checkbox" name="checkbox_charname_18[]" value="широкая">
+					                            	<label for="тип голени широкая">широкая</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       										</div>
 									</div>
-									<div class="check">
-										Узкая
-										<input type="checkbox" value="Узкая" />
-										<span>(232)</span>
-									</div>
-									<div class="check">
-										Стандарт
-										<input type="checkbox" value="Стандарт" />
-										<span>(232)</span>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="oneFiltr">
 							<div class="topFiltr">
 								<p>Материал</p><i class="fa fa-angle-double-up"></i><i class="fa fa-angle-double-down"></i>
 							</div>
-							<div class="bottomFiltr">
-								<div class="checkboxes">
-									<div class="check">
-										Кожа
-										<input type="checkbox" value="Кожа" />
-										<span>(232)</span>
+							<div class="bottomFiltr" style="overflow: hidden; display: block;">
+										<div class="checkboxes">
+																                           <div class="check">
+					                           		
+					                                <input id="материал кожа" type="checkbox" name="checkbox_charname_19[]" value="кожа">
+					                            	<label for="материал кожа">кожа</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="материал лак" type="checkbox" name="checkbox_charname_19[]" value="лак">
+					                            	<label for="материал лак">лак</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       					                           <div class="check">
+					                           		
+					                                <input id="материал замша" type="checkbox" name="checkbox_charname_19[]" value="замша">
+					                            	<label for="материал замша">замша</label>
+					                            	<!-- <span>(count)</span> -->
+					                           </div>
+					                       										</div>
 									</div>
-									<div class="check">
-										Замша
-										<input type="checkbox" value="Замша" />
-										<span>(232)</span>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="pickUp">
 							Сбросить настройки
@@ -455,13 +607,34 @@
                         			</a>         
 			                        <!--в fancybox-->         
 			                        <div id="product_1" class="for-box">
+			                        	<ul class="breadcrumb breadcrumb-custom">  
+											<div xmlns:v="http://rdf.data-vocabulary.org/#">
+											    <span typeof="v:Breadcrumb">
+											    	<a href="http://daflor.by/" rel="v:url" property="v:title">Цветы в Минске</a>&raquo; 
+											    	<span rel="v:child"> 
+										            	<span typeof="v:Breadcrumb"> 
+										                	<a href="/catalog/розы" rel="v:url" property="v:title">Роза</a>&raquo;
+									            			<span rel="v:child"> 
+									                			<span typeof="v:Breadcrumb"> 
+									                    			<a href="/catalog/красные" rel="v:url" property="v:title">Красные</a>&raquo;
+								                					<span rel="v:child"> 
+								                    					<span typeof="v:Breadcrumb">Red Naomi</span> 
+								                					</span> 
+																</span>
+															</span>
+														</span>
+													</span>
+												</span>
+											</div> 
+										</ul>   <!-- хлебные крошки конец -->
+										<div class="parent">
 										<div class="forimage">
 											<img src="images/tuflibig.jpg" alt="">
 										</div>
 										<div class="forinfo">
 											<h1>Сапоги Wit Mooni 222-1</h1>
 											<div class="dif">
-												<div class="articul">235</div>
+												<div class="articul">Артикул: 235</div>
 												<div class="forcost">2 000 <sup>000</sup> <span>р.</span></div>
 												<div class="null"></div>	
 											</div>
@@ -500,31 +673,32 @@
 											<div class="sizy">
 												<ul class="checklist sizes">
 																				            	 							                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							            								                    							                   
-								                    <li><a href="#" rel="size" data-item="33" class="checkbox">33</a></li>
+								                    <li><a href="#" rel="size" data-item="33" class="checkbox absent">33</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="34" class="checkbox">34</a></li>
+								                    <li><a href="#" rel="size" data-item="34" class="checkbox absent">34</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="35" class="checkbox isset">35</a></li>
+								                    <li><a href="#" rel="size" data-item="35" class="checkbox">35</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="36" class="checkbox isset">36</a></li>
+								                    <li><a href="#" rel="size" data-item="36" class="checkbox">36</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="37" class="checkbox isset">37</a></li>
+								                    <li><a href="#" rel="size" data-item="37" class="checkbox">37</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="38" class="checkbox isset">38</a></li>
+								                    <li><a href="#" rel="size" data-item="38" class="checkbox">38</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="39" class="checkbox isset">39</a></li>
+								                    <li><a href="#" rel="size" data-item="39" class="checkbox">39</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="40" class="checkbox isset">40</a></li>
+								                    <li><a href="#" rel="size" data-item="40" class="checkbox">40</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="41" class="checkbox">41</a></li>
+								                    <li><a href="#" rel="size" data-item="41" class="checkbox absent">41</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="42" class="checkbox">42</a></li>
+								                    <li><a href="#" rel="size" data-item="42" class="checkbox absent">42</a></li>
 								            								            								                    							                   
-								                    <li><a href="#" rel="size" data-item="43" class="checkbox">43</a></li>
+								                    <li><a href="#" rel="size" data-item="43" class="checkbox absent">43</a></li>
 								                </ul>
 										    </div> <!-- sizy -->
 										</div>  <!-- forinfo -->
 										<div class="null"></div>
+									</div>  <!-- parent -->
 									</div>  <!-- for-box --> 
 								</figure> <!--конец одного товара в каталоге -->				
 								<!--начало второго товара в каталоге -->
@@ -656,24 +830,24 @@
 								<li> <a class="active" href="index.html">главная</a> </li>
 								<li> <a href="catalog.html">каталог</a></li>
 								<li> <a href="magaziny.html">где купить</a></li>
-								<li> <a href="/about.html">о нас</a></li>
-								<li> <a href="/news.html">новости</a></li>
-								<li> <a href="/new-product.html">новинки</a></li>
+								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="news.html">новости</a></li>
+								<li> <a href="catalog.html">новинки</a></li>
 							</ul>
 						</nav>
 						<div class="addmenu">
 							<ul>
-								<li> <a href="bonus.html">бонусная система</a> </li>
-								<li> <a href="garantee.html">гарантия</a></li>
-								<li> <a href="vozvrat.html">возврат товара</a></li>
+								<li> <a href="about.html">бонусная система</a> </li>
+								<li> <a href="about.html">гарантия</a></li>
+								<li> <a href="about.html">возврат товара</a></li>
 								<li> <a href="about.html">о компании</a></li>
-								<li> <a href="brend.html">бренды</a></li>
+								<li> <a href="brendy.html">бренды</a></li>
 							</ul>
 						</div>
 					</div> <!--  left-footer -->
-					<div class="footer-fbook">
+					<a href="#" class="footer-fbook">
 						<i class="fa fa-facebook"></i>
-					</div>
+					</a>
 					<div class="forPhones">
 						<p>+375 (29) 658-18-67</p>
 					</div>

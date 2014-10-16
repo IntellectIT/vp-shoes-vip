@@ -2,7 +2,46 @@
   text-align: center;
   width: 462px;
   display: inline-block;
+  margin-left: 28px;
+  border: 1px solid #efefef;
+}
+.for-shops figure:first-child {
+  margin-left: 0px;
 }
 .oneShop img {
 border-top: 8px solid #af1500;
+}
+.smotr {
+color: #c41c05;
+text-decoration: underline;
+padding: 8px 0 28px;
+display: inline-block;
+}
+.smotr .fa {
+padding-right: 5px;
+font-size: 18px;
+}
+.oneShop h3 {
+text-transform: uppercase;
+border-bottom: 1px solid #CCC;
+display: inline-block;
+width: 285px;
+padding-bottom: 4px;
+margin: 10px auto;
+  font-weight: normal;
+  font-family: calibri;
+}
+.oneShop .tel {
+  margin-bottom: 20px;
+}
+.oneShop p {
+  margin-bottom: 3px;
+}
+.oneShop address {
+  margin-bottom: 5px;
+}
+.vremya-work {
+  font-size: 19px;
+  font-weight: normal;
+  font-family: calibri;
 }

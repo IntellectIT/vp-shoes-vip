@@ -10,6 +10,7 @@
   		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">  		
     	<link rel="stylesheet" href="css/slider.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/normalize.css"  type="text/css" media="screen">
+    	<link rel="stylesheet" href="css/jquery.fancybox.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/main.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/catalog.css"  type="text/css" media="screen">
 
@@ -29,15 +30,15 @@
 			<header>
 				<div class="firstline">
 					<div class="center">
-						<a href="/" class="logo">
+						<a href="index.html" class="logo">
 							<img src="images/logo.png" alt="Логотип">
 						</a>
 						<div class="name">
 							<span>Стильная обувь</span>
 						</div>
-						<div class="fbook">
+						<a href="http://www.facebook.com" class="fbook">
 							<i class="fa fa-facebook"></i>
-						</div>
+						</a>
 						<div class="for-phone">
 							<p>+375 29 658-18-67</p><!-- <img src="images/vel.png" alt=""> -->
 						</div>
@@ -47,17 +48,25 @@
 				<div class="secondline">
 					<div class="center">
 						<nav>
-							<ul>
+							<ul class="top-ul">
 								<li> <a class="active" href="index.html">главная</a> </li>
 								<li> <a href="catalog.html">каталог</a></li>
 								<li> <a href="magaziny.html">где купить</a></li>
-								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="about.html">о нас</a>
+									<ul>
+								      <li><a href="about.html">Бонусная система</a></li>
+								      <li><a href="about.html">Гарантия</a></li>
+								      <li><a href="about.html">Возврат товара</a></li>
+								      <li><a href="about.html">О компании</a></li>
+								      <li><a href="brendy.html">Бренды</a></li>
+								    </ul>
+								</li>
 								<li> <a href="news.html">новости</a></li>
-								<li> <a href="new-product.html">новинки</a></li>
+								<li> <a href="catalog.html">новинки</a></li>
 							</ul>
 						</nav>
 						<div class="search">
-							<form action="/search" method="POST">
+							<form action="#">
                                 <input name="q" type="text" class="input-search color-text" placeholder="Поиск..." id="searchq">
                                 <input type="submit" class="submit" value="">
                                 <div class="null"></div>
@@ -123,7 +132,7 @@
 				<section class="gray">
 					<div class="center">
 						<!-- первый ряд  -->
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -132,7 +141,7 @@
 								<img src="images/sapog.jpg" alt="">
 							</div>
 						</a>
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -141,7 +150,7 @@
 								<img src="images/2botik.jpg" alt="">
 							</div>
 						</a>
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -150,7 +159,7 @@
 								<img src="images/3botik.jpg" alt="">
 							</div>
 						</a>
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -160,7 +169,7 @@
 							</div>
 						</a>	
 						<!-- следующий ряд  -->
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -169,7 +178,7 @@
 								<img src="images/tufli.jpg" alt="">
 							</div>
 						</a>
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -178,7 +187,7 @@
 								<img src="images/2tufli.jpg" alt="">
 							</div>
 						</a>
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -187,7 +196,7 @@
 								<img src="images/3tufli.jpg" alt="">
 							</div>
 						</a>
-						<a href="#" class="onePoint">
+						<a href="catalog.html" class="onePoint">
 							<img class="allin" src="images/intop.png" alt="">
 							<div class="insidePoint">
 								<div class="zag">
@@ -272,24 +281,24 @@
 								<li> <a class="active" href="index.html">главная</a> </li>
 								<li> <a href="catalog.html">каталог</a></li>
 								<li> <a href="magaziny.html">где купить</a></li>
-								<li> <a href="/about.html">о нас</a></li>
-								<li> <a href="/news.html">новости</a></li>
-								<li> <a href="/new-product.html">новинки</a></li>
+								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="news.html">новости</a></li>
+								<li> <a href="catalog.html">новинки</a></li>
 							</ul>
 						</nav>
 						<div class="addmenu">
 							<ul>
-								<li> <a href="bonus.html">бонусная система</a> </li>
-								<li> <a href="garantee.html">гарантия</a></li>
-								<li> <a href="vozvrat.html">возврат товара</a></li>
+								<li> <a href="about.html">бонусная система</a> </li>
+								<li> <a href="about.html">гарантия</a></li>
+								<li> <a href="about.html">возврат товара</a></li>
 								<li> <a href="about.html">о компании</a></li>
-								<li> <a href="brend.html">бренды</a></li>
+								<li> <a href="brendy.html">бренды</a></li>
 							</ul>
 						</div>
 					</div> <!--  left-footer -->
-					<div class="footer-fbook">
+					<a href="#" class="footer-fbook">
 						<i class="fa fa-facebook"></i>
-					</div>
+					</a>
 					<div class="forPhones">
 						<p>+375 (29) 658-18-67</p>
 					</div>

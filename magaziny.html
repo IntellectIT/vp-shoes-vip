@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Бренды</title>
+		<title>Где купить</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="keywords" content="">
 		<meta name="description" content="">
@@ -10,6 +10,7 @@
   		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="screen">  		
     	<link rel="stylesheet" href="css/slider.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/normalize.css"  type="text/css" media="screen">
+    	<link rel="stylesheet" href="css/jquery.fancybox.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/main.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/catalog.css"  type="text/css" media="screen">
     	<link rel="stylesheet" href="css/news.css"  type="text/css" media="screen">
@@ -17,6 +18,7 @@
 
     	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     	<script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+    	<script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
     	<script type="text/javascript" src="js/custom.js"></script>
     	<script type="text/javascript" src="js/html5shiv.js"></script>
     	<!-- include jQuery + carouFredSel plugin -->
@@ -31,7 +33,7 @@
 			<header>
 				<div class="firstline">
 					<div class="center">
-						<a href="/" class="logo">
+						<a href="index.html" class="logo">
 							<img src="images/logo.png" alt="Логотип">
 						</a>
 						<div class="name">
@@ -49,13 +51,21 @@
 				<div class="secondline">
 					<div class="center">
 						<nav>
-							<ul>
+							<ul class="top-ul">
 								<li> <a class="active" href="index.html">главная</a> </li>
 								<li> <a href="catalog.html">каталог</a></li>
 								<li> <a href="magaziny.html">где купить</a></li>
-								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="about.html">о нас</a>
+									<ul>
+								      <li><a href="about.html">Бонусная система</a></li>
+								      <li><a href="about.html">Гарантия</a></li>
+								      <li><a href="about.html">Возврат товара</a></li>
+								      <li><a href="about.html">О компании</a></li>
+								      <li><a href="brendy.html">Бренды</a></li>
+								    </ul>
+								</li>
 								<li> <a href="news.html">новости</a></li>
-								<li> <a href="new-product.html">новинки</a></li>
+								<li> <a href="catalog.html">новинки</a></li>
 							</ul>
 						</nav>
 						<div class="search">
@@ -74,36 +84,114 @@
 					<div class="mainzag">
 						<h2>где купить</h2>
 					</div>	<!-- mainzag -->
-					<figure class="oneShop">
-						<div class="imgShop">	
-							<img src="images/shop1.jpg" alt="bonetti">
-						</div>
-						<figcaption>
-							<h3>фирменный магазин</h3>
-							<address>ТЦ «Замок», магазин № 172, 3 этаж, пр. Победителей, 65.</address>
-							<p class="tel">Тел: <span>+375(29)345-67-89</span></p>
-							<p class="vremya-work">Время работы:</p>
-							<p class="time">пн-вс 10.00-22.00</p>
-							<a href="#" class="smotr"><i class="fa fa-map-marker"></i>Смотрите на карте</a>
-							<div id="map"></div>
-						</figcaption>
-					</figure>
-					<figure class="oneShop">
-						<div class="imgShop">	
-							<img src="images/shop1.jpg" alt="bonetti">
-						</div>
-						<figcaption>
-							<h3>фирменный магазин</h3>
-							<address>ТЦ «Замок», магазин № 172, 3 этаж, пр. Победителей, 65.</address>
-							<p class="tel">Тел: <span>+375(29)345-67-89</span></p>
-							<p class="vremya-work">Время работы:</p>
-							<p class="time">пн-вс 10.00-22.00</p>
-							<a href="#" class="smotr"><i class="fa fa-map-marker"></i>Смотрите на карте</a>
-							<div id="map"></div>
-						</figcaption>
-					</figure>
+						<div class="for-shops">	
+							<figure class="oneShop">
+								<div class="imgShop">	
+									<img src="images/shop1.jpg" alt="bonetti">
+								</div>
+								<figcaption>
+									<h3>фирменный магазин</h3>
+									<address>ТЦ «Замок», магазин № 172, 3 этаж, пр. Победителей, 65.</address>
+									<p class="tel">Тел: <span>+375(29)345-67-89</span></p>
+									<p class="vremya-work">Время работы:</p>
+									<p class="time">пн-вс 10.00-22.00</p>
+									<a class="smotr fancybox.iframe" href="https://maps.google.com/maps?q=%D0%BC%D0%B8%D1%80+%D0%BC%D0%BE%D0%B4%D1%8B+%D0%B6%D0%B4%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%B8&amp;hl=ru&amp;ie=UTF8&amp;sll=53.930203,27.486755&amp;sspn=0.011522,0.031629&amp;oq=%D0%9C%D0%B8%D1%80+%D0%9C%D0%BE%D0%B4%D1%&amp;output=embed" ><i class="fa fa-map-marker"></i>Смотрите на карте</a>
+									<div id="map"></div>
+								</figcaption>
+							</figure>
+							<figure class="oneShop">
+								<div class="imgShop">	
+									<img src="images/shop1.jpg" alt="bonetti">
+								</div>
+								<figcaption>
+									<h3>фирменный магазин</h3>
+									<address>ТЦ «Замок», магазин № 172, 3 этаж, пр. Победителей, 65.</address>
+									<p class="tel">Тел: <span>+375(29)345-67-89</span></p>
+									<p class="vremya-work">Время работы:</p>
+									<p class="time">пн-вс 10.00-22.00</p>
+									<a href="#" class="smotr"><i class="fa fa-map-marker"></i>Смотрите на карте</a>
+									<div id="map"></div>
+								</figcaption>
+							</figure>
+						</div>  <!-- for-shops -->
+						<script>
+							$(document).ready(function() {
+								$(".smotr").fancybox({
+									maxWidth	: 800,
+									maxHeight	: 600,
+									fitToView	: false,
+									width		: '70%',
+									height		: '70%',
+									autoSize	: false,
+									closeClick	: false,
+									openEffect	: 'none',
+									closeEffect	: 'none'
+								});
+							});
+						</script>
 				</div>  <!-- center -->
 			</div>   <!--  content -->
+							<section class="beforeFooter">
+					<div class="center">
+						<div class="mainzag">
+							<h2>бренды</h2>
+						</div>	<!-- mainzag -->
+						<!-- carousel -->
+						<div class="list_carousel">
+							<ul id="foo2">
+								<li><div class="oneBrend">
+										<img src="images/brend_01.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_02.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_03.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_04.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_05.jpg" alt="brend">
+									</div>
+								</li>
+
+								<li><div class="oneBrend">
+										<img src="images/brend_06.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_07.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_08.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_09.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_10.jpg" alt="brend">
+									</div>
+								</li>
+								<li><div class="oneBrend">
+										<img src="images/brend_11.jpg" alt="brend">
+									</div>
+								</li>
+								<li class="null"></li>
+							</ul>
+							<div class="clearfix"></div>
+							<a id="prev2" class="prev" href="#">&lt;</a>
+							<a id="next2" class="next" href="#">&gt;</a>
+						</div> <!--list_carousel-->
+					</div>  <!-- center -->
+				</section>  <!--  beforeFooter -->
 			<div class="helper"></div>
 			<footer>
 				<div class="center">
@@ -114,24 +202,24 @@
 								<li> <a class="active" href="index.html">главная</a> </li>
 								<li> <a href="catalog.html">каталог</a></li>
 								<li> <a href="magaziny.html">где купить</a></li>
-								<li> <a href="/about.html">о нас</a></li>
-								<li> <a href="/news.html">новости</a></li>
-								<li> <a href="/new-product.html">новинки</a></li>
+								<li> <a href="about.html">о нас</a></li>
+								<li> <a href="news.html">новости</a></li>
+								<li> <a href="catalog.html">новинки</a></li>
 							</ul>
 						</nav>
 						<div class="addmenu">
 							<ul>
-								<li> <a href="bonus.html">бонусная система</a> </li>
-								<li> <a href="garantee.html">гарантия</a></li>
-								<li> <a href="vozvrat.html">возврат товара</a></li>
+								<li> <a href="about.html">бонусная система</a> </li>
+								<li> <a href="about.html">гарантия</a></li>
+								<li> <a href="about.html">возврат товара</a></li>
 								<li> <a href="about.html">о компании</a></li>
-								<li> <a href="brend.html">бренды</a></li>
+								<li> <a href="brendy.html">бренды</a></li>
 							</ul>
 						</div>
 					</div> <!--  left-footer -->
-					<div class="footer-fbook">
+					<a href="#" class="footer-fbook">
 						<i class="fa fa-facebook"></i>
-					</div>
+					</a>
 					<div class="forPhones">
 						<p>+375 (29) 658-18-67</p>
 					</div>
